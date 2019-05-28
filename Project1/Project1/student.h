@@ -7,12 +7,14 @@ using namespace std;
 class Student
 {
 public:
-	Student(const string& line); //настроить ВС, конструкторы,
+	Student(const string& line, char sep = ',');
 	const string& Surname() const { return surname; }
 	double AvgRatings() const;
 	bool IsValid() const;
 protected:
+	void ParseLine(const string&, char);
+
 	string surname;
 	array <int,5> ratings;
-	bool isContract;
+	bool isContract=true;
 };
